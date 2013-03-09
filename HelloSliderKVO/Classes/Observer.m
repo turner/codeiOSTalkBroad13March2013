@@ -15,8 +15,7 @@
 
 - (void)dealloc {
 	    
-    self.targetObject = nil;
-	
+    self.targetObject = nil;	
 	[super dealloc];
 }
 
@@ -41,7 +40,8 @@
 		  NSStringFromClass([self.targetObject class]),
 		  NSStringFromSelector(self.targetAction), [object valueForKeyPath:keyPath]);
 	
-    [self.targetObject performSelector:self.targetAction withObject:[object valueForKeyPath:keyPath]];
+    [self.targetObject performSelector:self.targetAction
+                            withObject:[object valueForKeyPath:keyPath]];
 	
 }
 

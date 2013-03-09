@@ -10,13 +10,7 @@
 
 @class Counter;
 @class Observer;
-@interface HelloSliderKVOViewController : UIViewController {
-	
-	UISlider	*m_slider;
-	UILabel		*m_label;
-	Counter		*m_counter;
-	Observer	*m_observer;
-}
+@interface HelloSliderKVOViewController : UIViewController
 
 @property(nonatomic,retain) IBOutlet UISlider	*slider;
 @property(nonatomic,retain) IBOutlet UILabel	*label;

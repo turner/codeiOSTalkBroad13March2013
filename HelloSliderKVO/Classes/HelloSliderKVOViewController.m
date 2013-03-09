@@ -12,46 +12,31 @@
 
 @implementation HelloSliderKVOViewController
 
-@synthesize slider = m_slider;
-@synthesize label = m_label;
-@synthesize counter = m_counter;
-@synthesize observer = m_observer;
+@synthesize slider;
+@synthesize label;
+@synthesize counter;
+@synthesize observer;
 
 - (void)dealloc {
 	
-    [m_slider	release], m_slider		= nil;
-    [m_label	release], m_label		= nil;
-    [m_counter	release], m_counter		= nil;
-    [m_observer	release], m_observer	= nil;
-	
-	self.slider	= nil;
-    self.label	= nil;
-
-	
+    self.slider = nil;
+    self.label = nil;
+    self.counter = nil;
+    self.observer = nil;
+    
     [super dealloc];
 }
 
 -(void) updateLabel:(NSNumber *)newValue {
 	
-	NSLog(@"Hello Slider KVO ViewController - updateLabel: %@", newValue);
-	
-	self.label.text = [NSString stringWithFormat:@"%.2f", [newValue floatValue]];
-	
+//	NSLog(@"Hello Slider KVO ViewController - updateLabel: %@", newValue);	
+	self.label.text = [NSString stringWithFormat:@"%.2f", [newValue floatValue]];	
 }
 
 - (void)viewDidLoad {
 
-    self.observer = [[[Observer alloc] initWithTarget:self action:@selector(updateLabel:)] autorelease];
-		
-	[self.counter addObserver:self.observer forKeyPath:@"count" options:NSKeyValueObservingOptionNew context:NULL];	
-	
-}
-
-- (void)didReceiveMemoryWarning {
-	// Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-	
-	// Release any cached data, images, etc that aren't in use.
+    self.observer = [[[Observer alloc] initWithTarget:self action:@selector(updateLabel:)] autorelease];		
+	[self.counter addObserver:self.observer forKeyPath:@"count" options:NSKeyValueObservingOptionNew context:NULL];		
 }
 
 @end

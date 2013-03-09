@@ -15,6 +15,12 @@
 @synthesize viewController;
 
 
+- (void)dealloc {
+    [viewController release];
+    [window release];
+    [super dealloc];
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
     // Override point for customization after app launch    
@@ -23,13 +29,5 @@
 	
 	return YES;
 }
-
-
-- (void)dealloc {
-    [viewController release];
-    [window release];
-    [super dealloc];
-}
-
 
 @end
