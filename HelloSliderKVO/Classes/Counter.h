@@ -8,9 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Counter : NSObject {
-    NSNumber *count;
-}
+@interface Counter : NSObject
 
 @property(nonatomic, retain) NSNumber *count;
 

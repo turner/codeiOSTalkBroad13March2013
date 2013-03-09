@@ -10,12 +10,12 @@
 
 @implementation Observer
 
-@synthesize targetObject = m_targetObject;
-@synthesize targetAction = m_targetAction;
+@synthesize targetObject;
+@synthesize targetAction;
 
 - (void)dealloc {
-	
-	[m_targetObject release], m_targetObject = nil;
+	    
+    self.targetObject = nil;
 	
 	[super dealloc];
 }
@@ -25,9 +25,8 @@
     if (self = [super init]) {
 		
         self.targetObject = object;
-        self.targetAction = action;
-		
-    } // if (self = [super init])
+        self.targetAction = action;		
+    }
 	
     return self;
 }     

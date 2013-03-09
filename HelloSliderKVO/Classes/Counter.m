@@ -14,15 +14,12 @@
 
 - (void)dealloc {
 	
-    [count release], count = nil;
-	
+    self.count = nil;	
 	[super dealloc];
 }
 
--(IBAction) trackSlider:(UISlider *)slider; {
-	
-    self.count = [NSNumber numberWithFloat:slider.value];
-		
+-(IBAction) trackSlider:(UISlider *)slider; {	
+    self.count = [NSNumber numberWithFloat:slider.value];		
 }
 
 @end
