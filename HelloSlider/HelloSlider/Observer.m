@@ -27,9 +27,10 @@
                       ofObject:(id)object
                         change:(NSDictionary *)change
                        context:(void *)context {
-
-    [self.targetObject performSelector:self.targetAction
-                            withObject:[object valueForKeyPath:keyPath]];
+    
+    [self.targetObject performSelectorOnMainThread:self.targetAction
+                                        withObject:[object valueForKeyPath:keyPath]
+                                     waitUntilDone:NO];
 
 }
 
