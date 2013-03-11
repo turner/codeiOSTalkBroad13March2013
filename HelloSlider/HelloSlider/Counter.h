@@ -8,5 +8,8 @@
 #import <Foundation/Foundation.h>
 
 @interface Counter : NSObject
+
 @property(nonatomic, strong) NSNumber *count;
+- (IBAction)trackSlider:(UISlider *)slider;
+
 @end

@@ -11,9 +11,6 @@
 #import "Counter.h"
 
 @interface EIViewController ()
-@property(nonatomic, strong) IBOutlet UILabel *label;
-@property(nonatomic, strong)          Observer *observer;
-@property(nonatomic, strong) IBOutlet Counter *counter;
 @end
 
 @implementation EIViewController
